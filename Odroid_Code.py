@@ -12,12 +12,15 @@ from googleapiclient.http import MediaFileUpload
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
+
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+
+#change this to your account for sending image to google drive
 credentials = ServiceAccountCredentials.from_json_keyfile_name('odroid-400614-45570d47424c.json', scope)
 client = gspread.authorize(credentials)
-
 credentials_path = 'odroid-400614-45570d47424c.json'
 folder_id = '1CkkY4NnatLzhOExt074HGI9V_hKYk8md'
+
 credentialsfordrive = service_account.Credentials.from_service_account_file(credentials_path, scopes=['https://www.googleapis.com/auth/drive'])
 
 # Create Google Drive service
